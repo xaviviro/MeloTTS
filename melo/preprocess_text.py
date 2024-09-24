@@ -79,12 +79,14 @@ def main(
                         " ".join([str(i) for i in word2ph]),
                     )
                 )
+                print("k")
                 bert_path = utt.replace(".wav", ".bert.pt")
                 os.makedirs(os.path.dirname(bert_path), exist_ok=True)
                 print(bert_path)
                 torch.save(bert.cpu(), bert_path)
                 print("ok")
             except Exception as error:
+                print(error)
                 print("err!", line, error)
 
         out_file.close()
