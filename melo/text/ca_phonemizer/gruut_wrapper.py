@@ -221,7 +221,7 @@ if __name__ == "__main__":
 
     for line in lines[:400]:
         text = line.split('|')[-1].strip()
-        ipa = es2ipa(text)
+        ipa = ca2ipa(text)
         phonemes.append(ipa + '\n')
         for s in ipa:
             if s not in symbols:
