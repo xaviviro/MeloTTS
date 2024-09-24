@@ -2,7 +2,7 @@ from .cleaner import catalan_cleaners
 from .gruut_wrapper import Gruut
 
 def ca2ipa(text):
-    e = Gruut(language="ca-es", keep_puncs=True, keep_stress=True, use_espeak_phonemes=True)
+    e = Gruut(language="ca", keep_puncs=True, keep_stress=True, use_espeak_phonemes=True)
     # text = catalan_cleaners(text)
     phonemes = e.phonemize(text, separator="")
     return phonemes
