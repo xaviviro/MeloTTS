@@ -261,16 +261,64 @@ ru_symbols = [
 ]
 num_ru_tones = 1
 
+# Catalan
+ca_symbols = [
+    "a",
+    "e",
+    "ɛ",
+    "i",
+    "o",
+    "ɔ",
+    "u",
+    "b",
+    "d",
+    "f",
+    "g",
+    "ɡ",
+    "k",
+    "l",
+    "ʎ",
+    "m",
+    "n",
+    "ɲ",
+    "p",
+    "r",
+    "ɾ",
+    "s",
+    "t",
+    "v",
+    "z",
+    "ʃ",
+    "ʒ",
+    "t͡s",
+    "t͡ʃ",
+    "d͡ʒ",
+    "x",
+    "ɣ",
+    "β",
+    "ð",
+    "ɫ",
+    "ɾ",
+    "ɲ",
+    "ʝ",
+    "ɣ",
+    "ʎ",
+    "ˈ",
+    "ˌ",
+    "ː"
+]
+num_ca_tones = 1
+
 # combine all symbols
-normal_symbols = sorted(set(zh_symbols + ja_symbols + en_symbols + kr_symbols + es_symbols + fr_symbols + de_symbols + ru_symbols))
+normal_symbols = sorted(set(zh_symbols + ja_symbols + en_symbols + kr_symbols + es_symbols + fr_symbols + de_symbols + ru_symbols + ca_symbols))
 symbols = [pad] + normal_symbols + pu_symbols
 sil_phonemes_ids = [symbols.index(i) for i in pu_symbols]
 
 # combine all tones
-num_tones = num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones + num_fr_tones + num_de_tones + num_ru_tones
+num_tones = num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones + num_fr_tones + num_de_tones + num_ru_tones + num_ca_tones
 
 # language maps
-language_id_map = {"ZH": 0, "JP": 1, "EN": 2, "ZH_MIX_EN": 3, 'KR': 4, 'ES': 5, 'SP': 5 ,'FR': 6}
+language_id_map = {"ZH": 0, "JP": 1, "EN": 2, "ZH_MIX_EN": 3, 'KR': 4, 'ES': 5, 'SP': 5 ,'FR': 6, 'CA': 7}
 num_languages = len(language_id_map.keys())
 
 language_tone_start_map = {
@@ -282,6 +330,7 @@ language_tone_start_map = {
     "ES": num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones,
     "SP": num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones,
     "FR": num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones,
+    "CA": num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones + num_fr_tones,
 }
 
 if __name__ == "__main__":
