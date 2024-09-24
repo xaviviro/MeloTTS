@@ -7,7 +7,8 @@ from setuptools.command.install import install
 cwd = os.path.dirname(os.path.abspath(__file__))
 
 with open('requirements.txt') as f:
-    reqs = f.read().splitlines()
+    requirements = f.read().splitlines()
+
 class PostInstallCommand(install):
     """Post-installation for installation mode."""
     def run(self):
@@ -26,10 +27,13 @@ setup(
     version='0.1.2',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=reqs,
+    install_requires=requirements,
     package_data={
         '': ['*.txt', 'cmudict_*'],
     },
+    dependency_links=[
+        'git+https://github.com/xaviviro/num2words.git'
+    ],
     entry_points={
         "console_scripts": [
             "melotts = melo.main:main",
