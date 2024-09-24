@@ -140,7 +140,7 @@ if __name__ == "__main__":
     from ca_to_ipa import ca2ipa
     import json
 
-    e = Gruut(language="ca-ba", keep_puncs=True, keep_stress=True, use_espeak_phonemes=False)
+    e = Gruut(language="ca", keep_puncs=True, keep_stress=True, use_espeak_phonemes=False)
     symbols = [
         "_",
         ",",
