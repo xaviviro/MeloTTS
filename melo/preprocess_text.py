@@ -49,7 +49,7 @@ def main(
     if clean:
         out_file = open(cleaned_path, "w", encoding="utf-8")
         new_symbols = []
-        print(len(open(metadata, encoding="utf-8").readlines()))
+        #print(len(open(metadata, encoding="utf-8").readlines()))
         for line in tqdm(open(metadata, encoding="utf-8").readlines()):
             try:
                 utt, spk, language, text = line.strip().split("|")
@@ -77,7 +77,9 @@ def main(
                 )
                 bert_path = utt.replace(".wav", ".bert.pt")
                 os.makedirs(os.path.dirname(bert_path), exist_ok=True)
+                print(bert_path)
                 torch.save(bert.cpu(), bert_path)
+                print("ok")
             except Exception as error:
                 print("err!", line, error)
 
