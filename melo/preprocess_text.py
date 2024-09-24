@@ -50,7 +50,11 @@ def main(
         out_file = open(cleaned_path, "w", encoding="utf-8")
         new_symbols = []
         #print(len(open(metadata, encoding="utf-8").readlines()))
-        for line in tqdm(open(metadata, encoding="utf-8").readlines()):
+        #for line in tqdm(open(metadata, encoding="utf-8").readlines()):
+        i = 0
+        for line in open(metadata, encoding="utf-8").readlines():
+            print(i)
+            i+=1
             try:
                 utt, spk, language, text = line.strip().split("|")
                 norm_text, phones, tones, word2ph, bert = clean_text_bert(text, language, device='cuda:0')
