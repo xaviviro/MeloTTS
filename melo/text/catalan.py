@@ -88,7 +88,7 @@ def g2p(text, pad_start_end=True, tokenized=None):
         if w == '[UNK]':
             phone_list = ['UNK']
         else:
-            phone_list = list(filter(lambda p: p != " ", ca_to_ipa.es2ipa(w)))
+            phone_list = list(filter(lambda p: p != " ", ca_to_ipa.ca2ipa(w)))
         
         for ph in phone_list:
             phones.append(ph)

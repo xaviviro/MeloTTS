@@ -137,7 +137,7 @@ class Gruut(BasePhonemizer):
 
 
 if __name__ == "__main__":
-    from ca_to_ipa import es2ipa
+    from ca_to_ipa import ca2ipa
     import json
 
     e = Gruut(language="ca-es", keep_puncs=True, keep_stress=True, use_espeak_phonemes=True)

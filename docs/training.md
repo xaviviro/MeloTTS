@@ -4,6 +4,7 @@ Before training, please install MeloTTS in dev mode and go to the `melo` folder.
 ```
 pip install -e .
 cd melo
+python -m unidic download
 ```
 
 ### Data Preparation
