@@ -25,7 +25,7 @@ from text.symbols import symbols, num_languages, num_tones
     type=click.Path(exists=True, file_okay=True, dir_okay=False),
 )
 @click.option("--val-per-spk", default=4)
-@click.option("--max-val-total", default=250000)
+@click.option("--max-val-total", default=8)
 @click.option("--clean/--no-clean", default=True)
 def main(
     metadata: str,
@@ -49,6 +49,7 @@ def main(
     if clean:
         out_file = open(cleaned_path, "w", encoding="utf-8")
         new_symbols = []
+        print(len(open(metadata, encoding="utf-8").readlines()))
         for line in tqdm(open(metadata, encoding="utf-8").readlines()):
             try:
                 utt, spk, language, text = line.strip().split("|")
